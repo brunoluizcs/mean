@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bem-Vindo ao<%=nome %></title>
+	</head>
+	<body>
+		<h1>Bem-Vindo ao Express</h1>
+	</body>
+</html>
