@@ -2,7 +2,7 @@ module.exports = function(app){
 		
 	var controller = {};
 	var Contato = app.models.contato;
-	controller.listaContatos = function(req,res){		
+	controller.listaContatos = function(req,res){	                
 		var promise = Contato.find().populate('emergencia').exec()
 			.then(
 				function(contatos){
@@ -21,7 +21,7 @@ module.exports = function(app){
 			.then(
 				function(contato){
 					if(!contato){
-						throw new Error("Contato n„o encontrado");
+						throw new Error("Contato n√£o encontrado");
 					}
 					res.json(contato);
 				},

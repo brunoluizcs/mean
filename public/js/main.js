@@ -1,7 +1,8 @@
 angular.module('mean',['ngResource','ngRoute'])
-	.config(function($routeProvider,$locationProvider){
-		 $locationProvider.hashPrefix('');
-		
+	.config(function($routeProvider,$locationProvider, $httpProvider){
+                $locationProvider.hashPrefix('');
+		$httpProvider.interceptors.push('meuInterceptor');
+                
 		$routeProvider.otherwise({redirectTo: '/contatos'});
 		
 		$routeProvider.when('/contatos',{
@@ -18,4 +19,7 @@ angular.module('mean',['ngResource','ngRoute'])
 			templateUrl: 'partials/contato.html',
 			controller: 'ContatoController'			
 		});
+                $routeProvider.when('/auth',{
+                    templateUrl: 'partials/auth.html',
+                });
 	});
